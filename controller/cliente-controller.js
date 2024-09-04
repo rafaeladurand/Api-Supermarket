@@ -51,7 +51,8 @@ module.exports = {
                 nome: req.body.nome,
                 cpf: req.body.cpf,
                 idade: req.body.idade,
-                tempoCliente: req.body.tempoCliente
+                tempoCliente: req.body.tempoCliente,
+                desconto: req.body.desconto
             };
 
             const clienteAtualizado = await Cliente.findByIdAndUpdate(idCliente, dadosAtualizados, { new: true });
