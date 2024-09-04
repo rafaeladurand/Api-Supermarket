@@ -8,7 +8,8 @@ module.exports = {
                 cpf: req.body.cpf,
                 idade: req.body.idade,
                 tempoCliente: req.body.tempoCliente,
-                senha: req.body.senha
+                senha: req.body.senha,
+                desconto: 0.0
             });
 
             const resultado = await novoCliente.save();

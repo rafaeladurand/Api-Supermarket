@@ -7,7 +7,7 @@ const ClienteSchema = new mongoose.Schema({
     idade: { type: Number, required: true },
     tempoCliente: { type: Number, required: true },
     senha: { type: String, required: true },
-    desconto: { type: Number, required: false }
+    desconto: { type: Number, required: true, default: 0.0 }
 });
 
 ClienteSchema.pre('save', async function (next) {
