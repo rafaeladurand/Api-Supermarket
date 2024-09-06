@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4e9e43a4-df0b-43fa-8a08-89a64c6b404a" alt="logo">
+</p>
+
+
+
 <h1 align="center"> Mix </h1>
 
 <a id="Sumário"></a>
