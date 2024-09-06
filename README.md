@@ -96,7 +96,22 @@
 - nome: Nome do usuário (obrigatório).
 - CPF: CPF do usuário (obrigatório).
 
-  
+ ## ⛵ Endpoints 
+
+<br/> 
+
+## `GET` All 
+
+```URL
+http://localhost:3001/produto
+```
+```URL
+http://localhost:3001/cliente
+```
+```URL
+http://localhost:3001/usuario
+```
+ 
 <a id="Dependências"></a>
 ## 🧪 Dependências
 > Requisitos para rotar o codigo...
