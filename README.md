@@ -71,6 +71,25 @@
 - descricao: Uma descrição detalhada do produto, explicando suas características.
 - dataValidade: A data de validade do produto, útil principalmente para produtos perecíveis.
 
+# 🛒 Compra
+## Aqui possui todos os atributos das compras.
+- nome do produto: Produto associado à compra.
+- preco: Preço do produto no momento da compra.
+- data da compra: Data em que a compra foi realizada.
+
+# 👥 Cliente
+## Aqui possui todos os atributos dos clientes cadastrados.
+- nome: Nome do cliente.
+- identidade ou CPF: Documento de identificação do cliente (RG ou CPF).
+- idade: Idade do cliente.
+- tempo de cliente: Tempo que o cliente faz compras no supermercado (um atributo para armazenar há quanto tempo ele é cliente).
+
+# 👥 Usuários
+## Aqui possui todos os atributos dos usuários cadastrados.
+- id: Identificador único do usuário (obrigatório).
+- nome: Nome do usuário (obrigatório).
+- CPF: CPF do usuário (obrigatório).
+
   
 <a id="Dependências"></a>
 ## 🧪 Dependências
@@ -87,25 +106,34 @@
 <br/>
 
 ## `📖 Instalação` 
-  
-  
- <br /> 
 
-> Caso tenha Git basta da git clone, caso não tenha baixe o projeto completo em dowlon
+1. Instale o MongoDB:
+- Baixe e instale o MongoDB em sua máquina a partir do site oficial (mongodb.com).
+ <br />
 
-```BASH
-git clone https://github.com/rafaeladurand/Api-Supermarket
-
-```
-
-<br /> 
-
-> Caso já tenha o Node em sua maquina basta instalar o projeto com npm i
+2. Inicie o MongoDB:
+- Abra o terminal e execute o comando: mongod. Isso iniciará o servidor MongoDB na porta padrão (27017).
 
 ```BASH
-npm i 
+mongod
 ```
 <br /> 
+
+3. Verifique a Conexão:
+- Certifique-se de que o MongoDB está rodando e que a URL mongodb://localhost:27017/supermercado está correta.
+
+```BASH
+mongodb://localhost:27017/supermercado
+```
+<br /> 
+4. Execute a API:
+- No diretório da sua API, abra o terminal e execute o comando: npm start (ou node api_mercado.js).
+
+```BASH
+node api_mercado.js
+```
+<br /> 
+
 
 <a id="Ideias"></a>
 ## 💡 Possíveis Melhoras
