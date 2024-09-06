@@ -45,15 +45,36 @@
 
 ## 🚩 As funcionalidades básicas da API são:
 
-- Pegar todos os produtos
-- Pegar o id do usuario atraves do nome 
-- Pegar os produtos dentro do carrinho do usuario
-- Pegar a soma de todos os item do usuario
-- Adicionar produtos dentro do carrinho 
-- Adicionar um novo usuario 
-- Mudar a quantidade de um item dentro do carrinho
-- Mudar a quantidade de um produto dentro do estoque 
-- Deletar um produto dentro do carrinho
+1. Gerenciamento de Produtos:
+- Cadastrar, atualizar, recuperar e remover produtos.
+2. Gerenciamento de Funcionários:
+- Cadastrar, atualizar, recuperar e remover usuários (funcionários) do supermercado.
+- Permitir que os funcionários façam login no sistema.
+3. Gerenciamento de Clientes:
+- Cadastrar, atualizar, recuperar e remover clientes do supermercado.
+- Ver todos os clientes cadastrados no sistema.
+4. Gerenciamento de Promoções:
+- Cadastrar, atualizar, recuperar e remover promoções.
+- Aplicar desconto a produtos específicos (como um chocolate), visível para todos os clientes.
+5. Descontos para Clientes:
+- Permitir que um usuário do sistema aplique descontos personalizados a um cliente específico.
+
+<br/>
+
+# 🍉🍊🥝 Produtos
+## Aqui possui todos os atributos dos produtos cadastrados.
+- id: Identificador único que diferencia cada produto.
+- nome: O nome do produto.
+- precoAtual: O preço atual do produto.
+- precoPromocao: O preço promocional do produto (se houver promoção).
+- tipo: Categoria ou tipo do produto.
+- descricao: Uma descrição detalhada do produto, explicando suas características.
+- dataValidade: A data de validade do produto, útil principalmente para produtos perecíveis.
+
+  
+<a id="Dependências"></a>
+## 🧪 Dependências
+> Requisitos para rotar o codigo...
 
 <br/>
 
@@ -84,12 +105,7 @@ git clone https://github.com/rafaeladurand/Api-Supermarket
 ```BASH
 npm i 
 ```
-
 <br /> 
-
-> OBS - Muito importante, caso não tenha um banco de dados MongoDB disponivel, não vai da para rodar o projeto, pois o projeto conecta diretamente com o banco de dados
-> sendo assim crie um arquivo ".env" para por os dados do MySQL.
-<a href="#Sumário"> 📖 Volta ao Sumário </a>
 
 <a id="Ideias"></a>
 ## 💡 Possíveis Melhoras
