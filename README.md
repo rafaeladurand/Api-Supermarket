@@ -31,5 +31,70 @@
 ## `Projeto Front-end` ➥ [Link GitHub](https://github.com/rafaeladurand/Supermarket)
 
 <br/>
+
+  https://github.com/user-attachments/assets/c156ebcf-635a-4596-838a-11bd3adaab35
+
+  Vídeo apresentando a organização do código.
   
   <br/>
+<a id="Resultados"></a>
+## 🚀 Resultados 
+  > Todos os resultados foram alcançados com sucesso. De modo geral são esses os resultados de cada requisição. 
+
+<br/>
+
+## 🚩 As funcionalidades básicas da API são:
+
+- Pegar todos os produtos
+- Pegar o id do usuario atraves do nome 
+- Pegar os produtos dentro do carrinho do usuario
+- Pegar a soma de todos os item do usuario
+- Adicionar produtos dentro do carrinho 
+- Adicionar um novo usuario 
+- Mudar a quantidade de um item dentro do carrinho
+- Mudar a quantidade de um produto dentro do estoque 
+- Deletar um produto dentro do carrinho
+
+<br/>
+
+## 🚀 Tecnologias/Tools
+- Nodejs
+- Express
+- Mongo
+- Mongoose
+
+<br/>
+
+## `📖 Instalação` 
+  
+  
+ <br /> 
+
+> Caso tenha Git basta da git clone, caso não tenha baixe o projeto completo em dowlon
+
+```BASH
+git clone https://github.com/MayconCoutinho/Api-Shopper
+
+```
+
+<br /> 
+
+> Caso já tenha o Node em sua maquina basta instalar o projeto com npm i
+
+```BASH
+npm i 
+```
+
+<br /> 
+
+> OBS - Muito importante, caso não tenha um banco de dados MongoDB disponivel, não vai da para rodar o projeto, pois o projeto conecta diretamente com o banco de dados
+> sendo assim crie um arquivo ".env" para por os dados do MySQL.
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<a id="Ideias"></a>
+## 💡 Possíveis Melhoras
+> Possíveis melhorias no código e no projeto, caso queira voltar e melhorá lo.
+> 
+<br/>
+
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
