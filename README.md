@@ -126,36 +126,51 @@ http://localhost:3001/usuario
 
 <br/>
 
-## `📖 Instalação` 
+Claro! Vou ajustar o passo a passo de instalação para você. Aqui está um guia atualizado:
 
-1. Instale o MongoDB:
-- Baixe e instale o MongoDB em sua máquina a partir do site oficial (mongodb.com).
- <br />
+---
 
-2. Inicie o MongoDB:
-- Abra o terminal e execute o comando: mongod. Isso iniciará o servidor MongoDB na porta padrão (27017).
+## 📖 Instalação
 
-```BASH
-mongod
-```
-<br /> 
+### 1. Instale o MongoDB
+- **Baixe e instale o MongoDB**: Acesse o site oficial [mongodb.com](https://www.mongodb.com/try/download/community) e baixe o instalador adequado para o seu sistema operacional.
 
-3. Verifique a Conexão:
-- Certifique-se de que o MongoDB está rodando e que a URL mongodb://localhost:27017/supermercado está correta.
+### 2. Inicie o MongoDB
+- **Abra o terminal** e execute o seguinte comando para iniciar o servidor MongoDB na porta padrão (27017):
+  ```bash
+  mongod
+  ```
+  Esse comando iniciará o MongoDB e você deve ver mensagens indicando que o servidor está em execução.
 
-```BASH
-mongodb://localhost:27017/supermercado
-```
-<br /> 
-4. Execute a API:
-- No diretório da sua API, abra o terminal e execute o comando: npm start (ou node api_mercado.js).
+### 3. Verifique a Conexão
+- **Certifique-se de que o MongoDB está rodando** e que a URL para conexão está correta:
+  ```bash
+  mongodb://localhost:27017/supermercado
+  ```
+  Essa URL é usada para conectar o seu aplicativo ao MongoDB.
 
-```BASH
-node api_mercado.js
-```
-<br /> 
+### 4. Prepare o Projeto Node.js
+- **No diretório do seu projeto**, abra o terminal e execute:
+  ```bash
+  npm init -y
+  ```
+  Isso cria um arquivo `package.json` com as configurações padrão.
 
+- **Instale as dependências necessárias**:
+  ```bash
+  npm install express body-parser cors mongoose bcryptjs
+  ```
 
+### 5. Execute a API
+- **No diretório da sua API**, execute o seguinte comando para rodar o servidor:
+  ```bash
+  node api_mercado.js
+  ```
+
+---
+
+Certifique-se de que o MongoDB está rodando antes de tentar iniciar a API. Se você encontrar algum problema ou erro, me avise para que eu possa ajudar!
+  
 <a id="Ideias"></a>
 ## 💡 Possíveis Melhoras
 > Possíveis melhorias no código e no projeto, caso queira voltar e melhorá lo.
