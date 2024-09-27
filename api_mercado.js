@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 const PORT = 3001; 
 
 
-mongoose.connect('mongodb://localhost:27017/supermercado', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/supermercado');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -35,5 +35,5 @@ app.use('/compra', compraResource);
 
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
