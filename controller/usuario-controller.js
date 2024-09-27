@@ -1,4 +1,5 @@
 const Usuario = require('../models/usuario'); 
+const jsw = require('jsonwebtoken');
 
 module.exports = {
     novo: async (req, res) => {
@@ -84,16 +85,16 @@ module.exports = {
             const usuario = await Usuario.findOne({ cpf });
 
             if (!usuario) {
-                return res.status(400).json({ message: 'Usuário não encontrado' });
+                return res.status(401).json({ message: 'CPF ou Senha incorretos.' });
             }
 
             const isMatch = await usuario.comparePassword(senha);
 
             if (!isMatch) {
-                return res.status(400).json({ message: 'Senha incorreta' });
+                return res.status(401).json({ message: 'CPF ou Senha incorretos.' });
             }
-
-            res.json({ message: 'Login bem-sucedido!' });
+            const token = jsw.sign({},'SECRET', {expiresIn:'1d'})
+            return res.status(200).json({token});
         } catch (err) {
             console.error('Erro ao autenticar usuário:', err);
             res.status(500).json({ message: 'Erro ao autenticar usuário', error: err });

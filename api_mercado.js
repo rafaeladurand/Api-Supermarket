@@ -5,7 +5,7 @@ const produtoResource = require('./resources/produto-resource');
 const usuarioResource = require('./resources/usuario-resource');
 const clienteResource = require('./resources/cliente-resource');
 const compraResource = require('./resources/compra-resource');
-
+const authResource = require('./resources/auth-resource')
 const mongoose = require('mongoose');
 
 const app = express();
@@ -30,6 +30,7 @@ db.once('open', () => {
 app.use('/produto', produtoResource);
 app.use('/usuario', usuarioResource);
 app.use('/cliente', clienteResource);
+app.use('/auth', authResource)
 app.use('/compra', compraResource);
 
 

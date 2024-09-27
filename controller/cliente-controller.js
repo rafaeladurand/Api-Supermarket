@@ -1,4 +1,6 @@
 const Cliente = require('../models/cliente');
+const jsw = require('jsonwebtoken');
+
 
 module.exports = {
     novo: async (req, res) => {
@@ -90,15 +92,16 @@ module.exports = {
             const cliente = await Cliente.findOne({ cpf });
 
             if (!cliente) {
-                return res.status(404).json({ message: 'Cliente não encontrado.' });
+                return res.status(401).json({ message: 'CPF ou Senha incorretos.' });
             }
 
             const isMatch = await cliente.comparePassword(senha);
 
             if (isMatch) {
-                res.status(200).json({ message: 'Login bem-sucedido!' });
+                const token = jsw.sign({},'SECRET', {expiresIn:'1d'})// Criação de Token 
+                res.status(200).json({token});
             } else {
-                res.status(401).json({ message: 'Senha incorreta.' });
+                res.status(401).json({ message: 'CPF ou Senha incorretos. ' });
             }
         } catch (err) {
             console.error('Erro ao autenticar cliente:', err);
