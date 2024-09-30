@@ -24,7 +24,11 @@ const produtoSchema = new mongoose.Schema({
     dataValidade: {
         type: Date,
         required: false  
-    }
+    },
+    image: {
+        type: String, 
+        required: true
+      }
 }, { timestamps: true }); 
 
 

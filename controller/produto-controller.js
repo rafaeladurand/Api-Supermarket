@@ -10,6 +10,7 @@ module.exports = {
                 tipo: req.body.tipo,
                 descricao: req.body.descricao,
                 dataValidade: req.body.dataValidade,
+                image: req.body.image,
             });
 
             await novoProduto.save();
@@ -54,6 +55,7 @@ module.exports = {
                 tipo: req.body.tipo,
                 descricao: req.body.descricao,
                 dataValidade: req.body.dataValidade,
+                image: req.body.image,
             };
 
             const produtoAtualizado = await Produto.findByIdAndUpdate(idProduto, dadosAtualizados, { new: true });
