@@ -1,4 +1,4 @@
-const Usuario = require('../models/usuario'); 
+const Usuario = require('../models/usuario');
 const jsw = require('jsonwebtoken');
 
 module.exports = {
@@ -44,25 +44,43 @@ module.exports = {
 
     editar: async (req, res) => {
         try {
-            const idUsuario = req.params.idUsuario;
-            const dadosAtualizados = {
-                nome: req.body.nome,
-                cpf: req.body.cpf,
-                senha: req.body.senha
-            };
+            console.log('Parâmetros recebidos:', req.params);
 
-            const usuarioAtualizado = await Usuario.findByIdAndUpdate(idUsuario, dadosAtualizados, { new: true });
+            const idUsuario = req.params.id;
+            console.log(`Tentando encontrar o usuário com ID: ${idUsuario}`);
 
-            if (usuarioAtualizado) {
-                res.send('Usuário atualizado com sucesso!');
-            } else {
-                res.status(404).send('Usuário não encontrado.');
+            const usuario = await Usuario.findById(idUsuario);
+
+            if (!usuario) {
+                console.log('Usuário não encontrado.');
+                return res.status(404).send('Usuário não encontrado.');
             }
+
+            console.log('Usuário encontrado:', usuario);
+
+            if (req.body.senha) {
+                console.log('Nova senha recebida:', req.body.senha);
+                console.log('Atualizando senha do usuário...');
+                usuario.senha = req.body.senha;
+            } else {
+                console.log('Nenhuma nova senha foi recebida.');
+            }
+
+
+            console.log('Salvando as alterações no usuário...');
+            await usuario.save();
+
+            console.log('Usuário atualizado com sucesso:', usuario);
+            res.json(usuario);
         } catch (err) {
             console.error('Erro ao atualizar usuário:', err);
             res.status(500).send('Erro ao atualizar usuário.');
         }
     },
+
+
+
+
 
     deletar: async (req, res) => {
         try {
@@ -93,8 +111,8 @@ module.exports = {
             if (!isMatch) {
                 return res.status(401).json({ message: 'CPF ou Senha incorretos.' });
             }
-            const token = jsw.sign({},'SECRET', {expiresIn:'1d'})
-            return res.status(200).json({token});
+            const token = jsw.sign({}, 'SECRET', { expiresIn: '1d' })
+            return res.status(200).json({ token });
         } catch (err) {
             console.error('Erro ao autenticar usuário:', err);
             res.status(500).json({ message: 'Erro ao autenticar usuário', error: err });

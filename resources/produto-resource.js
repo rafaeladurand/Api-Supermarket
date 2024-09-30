@@ -12,6 +12,6 @@ router.get('/', produtoController.listar);
 router.get('/:idProduto', produtoController.buscarById);
 router.put('/:idproduto', produtoController.editar);
 router.delete('/:idproduto', produtoController.deletar);
-
+router.get('/produto/nome', produtoController.listarByNome)
 
 module.exports = router;

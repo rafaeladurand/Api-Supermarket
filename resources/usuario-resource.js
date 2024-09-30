@@ -8,7 +8,7 @@ router.use(isAuthenticated);
 router.post('/', usuarioController.novo);
 router.get('/', usuarioController.listar);
 router.get('/:idUsuario', usuarioController.buscarById);
-router.put('/:idUsuario', usuarioController.editar);
+router.put('/:id', usuarioController.editar);
 router.delete('/:idUsuario', usuarioController.deletar);
 router.post('/autenticar', usuarioController.autenticar);
 

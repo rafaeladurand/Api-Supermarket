@@ -86,5 +86,28 @@ module.exports = {
             console.error('Erro ao deletar produto:', err);
             res.status(500).send('Erro ao deletar produto.');
         }
-    }
+    },
+
+     listarByNome: async (req, res) => {
+        try {
+            const nome = req.query.nome;
+            if (!nome) {
+                return res.status(400).send('O nome do produto é obrigatório.');
+            }
+
+            const produtos = await Produto.find({ 
+                nome: { $regex: nome, $options: 'i' } // Busca case-insensitive
+            });
+
+            if (produtos.length > 0) {
+                res.status(200).send(produtos);
+            } else {
+                res.status(404).send('Nenhum produto encontrado.');
+            }
+        } catch (err) {
+            console.error('Erro ao buscar produtos pelo nome:', err);
+            res.status(500).send('Erro ao buscar produtos pelo nome.');
+        }
+    },
+
 };
