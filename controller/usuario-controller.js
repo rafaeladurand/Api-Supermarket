@@ -5,25 +5,24 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-// Configuração de armazenamento para o Multer
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         const uploadPath = path.join(__dirname, '..', 'uploads', 'avatars');
-        // Garantir que o diretório exista
+        
         fs.mkdirSync(uploadPath, { recursive: true });
         cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
-        // Gerar um nome de arquivo único
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, uniqueSuffix + path.extname(file.originalname));
     }
 });
 
-// Inicializar o multer com a configuração de armazenamento
+
 const upload = multer({ 
     storage: storage,
-    limits: { fileSize: 2 * 1024 * 1024 }, // Limite de 2 MB
+    limits: { fileSize: 2 * 1024 * 1024 }, 
     fileFilter: function (req, file, cb) {
         const filetypes = /jpeg|jpg|png/;
         const mimetype = filetypes.test(file.mimetype);
@@ -35,7 +34,7 @@ const upload = multer({
     }
 });
 
-// Middleware para lidar com o upload único de avatar
+
 const uploadAvatar = upload.single('avatar');
 
 module.exports = {
@@ -117,7 +116,7 @@ module.exports = {
 
                 if (req.file) {
                     console.log('Novo avatar recebido:', req.file.filename);
-                    // Deletar o avatar antigo se existir
+                   
                     if (usuario.avatar) {
                         const oldAvatarPath = path.join(__dirname, '..', usuario.avatar);
                         fs.unlink(oldAvatarPath, (err) => {
@@ -134,7 +133,7 @@ module.exports = {
                 res.json(usuario);
             } catch (err) {
                 if (err instanceof multer.MulterError) {
-                    // Erro do Multer durante o upload
+                    
                     console.error('Erro do Multer:', err);
                     return res.status(400).send(err.message);
                 } else if (err.message === 'Apenas arquivos de imagem são permitidos!') {
@@ -152,7 +151,7 @@ module.exports = {
             const resultado = await Usuario.findByIdAndDelete(idUsuario);
 
             if (resultado) {
-                // Deletar o arquivo de avatar se existir
+                
                 if (resultado.avatar) {
                     const avatarPath = path.join(__dirname, '..', resultado.avatar);
                     fs.unlink(avatarPath, (err) => {
@@ -183,7 +182,7 @@ module.exports = {
             if (!isMatch) {
                 return res.status(401).json({ message: 'CPF ou Senha incorretos.' });
             }
-            const token = jsw.sign({ id: usuario._id }, 'SECRET', { expiresIn: '1d' }) // Incluindo o ID do usuário no token
+            const token = jsw.sign({ id: usuario._id }, 'SECRET', { expiresIn: '1d' }) 
             return res.status(200).json({ token });
         } catch (err) {
             console.error('Erro ao autenticar usuário:', err);
