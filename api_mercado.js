@@ -7,6 +7,7 @@ const clienteResource = require('./resources/cliente-resource');
 const compraResource = require('./resources/compra-resource');
 const authResource = require('./resources/auth-resource')
 const mongoose = require('mongoose');
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -32,6 +33,7 @@ app.use('/usuario', usuarioResource);
 app.use('/cliente', clienteResource);
 app.use('/auth', authResource)
 app.use('/compra', compraResource);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.listen(PORT, () => {
