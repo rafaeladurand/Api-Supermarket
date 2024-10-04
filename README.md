@@ -38,11 +38,6 @@
 
 <br/>
 
-  https://github.com/user-attachments/assets/c156ebcf-635a-4596-838a-11bd3adaab35
-
-  Vídeo apresentando a organização do código.
-  
-  <br/>
 <a id="Resultados"></a>
 ## 🚀 Resultados 
   > Todos os resultados foram alcançados com sucesso. De modo geral são esses os resultados de cada requisição. 
@@ -76,12 +71,6 @@
 - tipo: Categoria ou tipo do produto.
 - descricao: Uma descrição detalhada do produto, explicando suas características.
 - dataValidade: A data de validade do produto, útil principalmente para produtos perecíveis.
-
-# 🛒 Compra
-## Aqui possui todos os atributos das compras.
-- nome do produto: Produto associado à compra.
-- preco: Preço do produto no momento da compra.
-- data da compra: Data em que a compra foi realizada.
 
 # 👥 Cliente
 ## Aqui possui todos os atributos dos clientes cadastrados.
@@ -126,9 +115,18 @@ http://localhost:3001/usuario
 
 <br/>
 
-Claro! Vou ajustar o passo a passo de instalação para você. Aqui está um guia atualizado:
+---
+
+### 💼 Upload de Avatar
+- **Implementação de Upload de Avatar**: Adicionamos a funcionalidade de upload de avatar para os usuários. Agora, os usuários podem carregar suas imagens de perfil, tornando a experiência mais personalizada.
+- **Dependência Utilizada**: Para gerenciar o upload de arquivos, utilizamos o `multer`. Para instalá-lo, execute:
+  ```bash
+  npm install multer
+  ```
 
 ---
+
+Se precisar de mais detalhes ou ajustes, é só avisar!
 
 ## 📖 Instalação
 
