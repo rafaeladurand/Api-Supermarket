@@ -126,7 +126,23 @@ http://localhost:3001/usuario
 
 ---
 
-Se precisar de mais detalhes ou ajustes, é só avisar!
+### 🔐 Criptografia, Tokens e Cookies
+- **Criptografia de Senhas**: As senhas dos usuários são criptografadas para garantir a segurança dos dados. Para isso, utilizamos o `bcryptjs`, que oferece uma forte proteção contra ataques de força bruta.
+  ```bash
+  npm install bcryptjs
+  ```
+
+- **Autenticação com Tokens**: Implementamos tokens JWT (JSON Web Tokens) para autenticação. Os tokens são gerados no login e usados para validar e gerenciar o acesso de usuários de maneira segura.
+  ```bash
+  npm install jsonwebtoken
+  ```
+
+- **Gerenciamento de Cookies**: Utilizamos o pacote `nookies` para manipulação de cookies, facilitando o armazenamento seguro de tokens e informações de sessão no lado do cliente.
+  ```bash
+  npm install nookies
+  ```
+
+---
 
 ## 📖 Instalação
 
